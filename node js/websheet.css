@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: darkblue;
+}
+
+img {
+    align: center;
+    display: block;
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+div {
+    background-color: white;
+    border: 1px solid gray;
+    padding: 15px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 5px;
+}
+
+h3 {
+    color: darkgreen;
+    border-bottom: 2px solid lightgray;
+    padding-bottom: 5px;
+}
+
+p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin: 8px 0;
+}
+
