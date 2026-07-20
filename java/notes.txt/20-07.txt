@@ -1,0 +1,75 @@
+/*literal:
+the format through which we express the constants is called lierals*/
+
+----Types of literals----
+if x=4 i.e, binary 100
+1.Hexa: these can be represented by x=0X4
+2.Octa: these can be represented by x=04
+3.binary:these can be represented by  x=0B100
+
+**Based on number systems**
+REFER VAB.JABA
+
+#if u use the number system wrong like
+   x=0801;
+      ^
+ *8 is not available in octa number system(0-7)
+
+
+
+**=Java consider all real values as double;
+assume float x=12.32;
+and when u use
+System.out.println("The value of x is:"+x);
+
+-we get error  possible lossy conversion from double to float
+        float x=65.54;
+                ^
+->what we can do is 
+       make it x=65.54f  (or) x=65.54F
+
+
+**to represnt x=6.554 as 65.54 
+what we do is x=6.554 X 10^1
+which is written in java as x=6.554e1f;
+
+--in other data types like
+char= u can use ASCII or literals
+for boolean = true or false
+
+----
+control constructs(special statements)
+------
+control the flow of the execution of the program
+
+*the programs on which we cant have the control of flow is called static
+--in control constructs we have 3 types
+1.condition constructs
+    if(expression){ code...}
+
+
+2. selection
+   switch is a specail conditional constructs
+    switch(input){
+    case 1:
+          break;
+    .....
+    default:
+  }
+***given the input expression must evalute to int type value
+** char will be allowed beacuse of ASCII
+** no float, string, boolean
+
+
+3.iteration
+    i) do {code..}while(expression) --minimum guarenteed iteration
+    ii) while(expression){code...} --indefinite iteration
+    iii) for(;;;){code...}-- finite
+
+enhanced version for for loop
+int arr[]={1,2,3,4,5};
+for(int input: arr){
+    System.out.println(input);
+}
+
+**but only able to access not able to control the iteration
