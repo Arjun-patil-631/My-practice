@@ -1,0 +1,17 @@
+--operators in java--
+operators are classied based on their functionality
+
+n0. if operators uniary, binary, ternary
+An operators is anything that takes fixed operands as input and perform something(operation) 
+and return some value(one value)
+functions are nothing but user defined operators
+3 
+
+
+---varargs[]
+by adding ... we can pass n number of operands in a funciton
+----
+
+expression: a legal combination of operators & operands to perform something and finally return one single single value
+statements: an instructon or any command given by the user to perfrom some specific task
+
