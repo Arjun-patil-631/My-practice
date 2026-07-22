@@ -4,17 +4,23 @@ body {
     margin: 20px;
 }
 
-h1 {
-    text-align: center;
-    color: darkblue;
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
 }
 
-img {
-    align: center;
-    display: block;
-    margin: 15px auto;
-    border-radius: 10px;
+.header img {
+    height: 100px;
 }
+
+.header h1 {
+    flex: 1;          /* Takes all remaining width */
+    text-align: center;
+    margin: 0;
+}
+
+
 
 div {
     background-color: white;
