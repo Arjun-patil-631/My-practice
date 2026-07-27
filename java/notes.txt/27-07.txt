@@ -1,0 +1,85 @@
+function and method
+both are same just the difference is that method is written in classes
+
+---methods signature ---
+in the program  :
+
+public static void main(String[] args){}
+                    ^
+
+the main is the signature of the method
+method signature:  name paramter list 
+
+now lets write a program 
+--------------------------------------
+public class Demo{
+    public static void main(String[] args){
+        int result=add(10, 20);
+        System.out.println(result);
+    }
+    int add(int a, int b){
+        return a+b;
+    }
+}
+---------------------------------------
+***This will give the below error***
+Demo.java:3: error: non-static method add(int,int) cannot be referenced from a static context
+        int result=add(10, 20);
+                   ^
+
+this is beacuse our main class is static and our int add is not static thus 
+we cant call from a static method to a non-static method 
+
+// use static int add(int a, int b){}
+
+==Lets understand more detailed about signature
+------------------------------------------------
+public class Demo{
+    public static void main(String[] args){
+        int result=add(10, 20);
+        System.out.println(result);
+    }
+    public static int add(int a, int b){
+        return a+b;
+    }
+    public static void add(int i, int j){
+        
+    }
+}
+-------------------------------------------------
+***This will give the below error***
+Demo.java:9: error: method add(int,int) is already defined in class Demo
+    public static void add(int a, int b){}
+
+Thus the methods having two paramters or 3 paramters
+are different methods beacuse they have different signature
+
+Thus the methods are called as overloaded methods
+
+**What we can do is:
+change the paramter list in second method 
+      ==i.e,change the paramter list 
+      ==i.e, chnage the parameters data types
+
+--example""
+--------------------------------------------------------
+public class Demo{
+    public static void main(String[] args){
+        int result=plus(10,20);
+        System.out.printlln(result);
+    }
+    public static int plus(int a, int b){
+        return a+b;
+    }
+    public static void plus(int i, int j, int x){
+        
+    }
+    public static int plus(long l1, long l2){
+        return (int)(l1+l2);
+    }
+}
+------------------------------------------------------------
+//The above program will run without any error\\
+**The second method is running with 3 parameters
+**the third method is running with different parameters data types 
+This is called as method overloading
