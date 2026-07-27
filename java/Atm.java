@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SmartAtm{
+public class Atm{
     public static void main(String args[]){
         //giving all the necessary details
         int FixedCode=1234, MAX_ATTEMPTS=3;
@@ -16,11 +16,14 @@ public class SmartAtm{
             if(Pin==FixedCode){
                 System.out.println("----Successfully loggined----\n\n");
                 while(true){
-                        System.out.println("\n\n----DISPLAYING MAIN MENU----\n\n");
-                        System.out.println("1.Check Balance\n");
-                        System.out.println("2.Deposit\n");
-                        System.out.println("3.withdraw\n");
-                        System.out.println("4.exit\n\n");
+                        System.out.println(" \n\n______________________________");
+                        System.out.println("|----DISPLAYING MAIN MENU-----|");
+                        System.out.println("|_____________________________|");
+                        System.out.println("|   1.Check Balance           |");
+                        System.out.println("|   2.Deposit                 |");
+                        System.out.println("|   3.withdraw                |");
+                        System.out.println("|   4.exit                    |");
+                        System.out.println("|_____________________________|");
                         System.out.println("Enter your Choice:");
                         Choice=scanner.nextInt();
                         switch(Choice){
