@@ -1,0 +1,30 @@
+objects , arrays, & json
+language and api's
+
+json : javascript object notatation
+object :
+let student ={
+    Sname: "ramu",
+    rollno= 54,
+    marks=566
+};
+
+arrays
+let color=["red", "blue", "green"];
+let classroom={
+    classroom = "cse",
+    No.of_student=73,
+}
+
+
+student_list=[
+    {name="arjun", rollno=24},
+    {name="kiran", rollno=55}
+]
+
+object to text format:
+ object->json()[text format]
+
+
+for i in its for arrays
+for ... for : for objects 
