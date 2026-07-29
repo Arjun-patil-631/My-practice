@@ -1,0 +1,66 @@
+-------------------------------------------------
+public class Dem{
+    public static void main(String args[]){
+        int values[]={1,2};
+        System.out.println("from the begining...");
+        for(int i=0; i<3; i++){
+            System.out.println(values[i]);
+
+        }
+        System.out.println("from the end...");
+    }
+}
+-----------------------------------------------------
+PS C:\Users\Arjun Patil\Downloads\work\java> javac Dem.java
+PS C:\Users\Arjun Patil\Downloads\work\java> java Dem      
+from the begining...
+1
+2
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
+        at Dem.main(Dem.java:6)
+
+=============
+our compiler takes it as correct 
+but went it comes to jvm it gets terminated 
+as the index is out of range od the array
+
+
+when we use --- default values
+int array            0
+char array                   (\0)
+float array          0.0
+double array         0.0
+
+
+-String
+how to declare String
+----------------------------------------
+String name1="SoC";
+String name2=new String("SoC");
+
+System.out.printlln(name1.equal(name2));
+System.out.printlln((name1==name2));
+----------------------------------------
+output 
+true 
+false
+
+
+now 
+----------------------------------------
+String name1="SoC";
+String name2="SoC";
+
+System.out.printlln(name1.equal(name2));
+System.out.printlln((name1==name2));
+----------------------------------------
+output 
+true 
+true 
+
+***
+because new creates a new String
+where as when we initisalize normally it stores both in a constant pool so we get the true
+when refered to the reference of Strings 
+
+
