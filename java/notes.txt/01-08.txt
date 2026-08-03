@@ -1,0 +1,85 @@
+----------------------
+public class StringDemo{
+    public static void main(String args[]){
+        String message="Hello!!";
+        System.out.println(message);
+        String greeting=message+(" Srinivas");
+        System.out.println(message);
+        System.out.println(greeting);
+    }
+}
+-------------------------------
+op :
+Hello!!
+Hello!!
+Hello!! Srinivas
+
+------------------------------------
+public class StringDemo{
+    public static void main(String args[]){
+        String message="Hello!!";
+        System.out.println(message);
+        String greeting=message.concat(" Srinivas");
+        System.out.println(message);
+        System.out.println(greeting);
+    }
+}
+--------------------------------------------
+op:
+Hello!!
+Hello!!
+Hello!! Srinivas
+
+noww
+----------------------------------------------
+public class StringDemo{
+    public static void main(String args[]){
+        System.out.println("outcome of string buffer");
+        StringBuffer message=new StringBuffer("Hello!!");
+        System.out.println(message);
+        StringBuffer greeting=message.append(" Srinivas");
+        System.out.println(message);
+        System.out.println(greeting);
+
+        //without string buffer
+        System.out.println("\noutcome of string");
+        String message1="Hello!!";
+        System.out.println(message1);
+        String greeting1=message1.concat(" Srinivas");
+        System.out.println(message1);
+        System.out.println(greeting1);
+    }
+}
+---------------------------------------------------
+//output
+outcome of string buffer
+Hello!!
+Hello!! Srinivas
+Hello!! Srinivas
+
+outcome of string
+Hello!!
+Hello!!
+Hello!! Srinivas
+
+*****
+This is because StringBuffer is mutable
+and string is immutable 
+
+when we use append on StringBuffer it make changes in the same string
+but whereas in string concat it returns a new string
+
+**
+when we use hashcode on all outputs
+we get same hashcode on the StringBuffer 
+we get different hashcode on the String
+
+-->we have something like StringBuilder 
+it has the same features like StringBuffer
+*only difference is that StringBuffer is used in mutlithreaded applications
+and StringBuilder is best suitable for single threaded applications
+
+**String is best used for mutlithreaded because string is immutable and it can be easily accessable by everyone
+without any internventions
+
+//write a progrm to display a menu till the user wish and track all the navigation and print it beofre exiting the applicaton
