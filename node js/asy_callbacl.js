@@ -9,7 +9,7 @@
     function serveFood(){
         console.log("Serving food to customer");
     }
-    prepareFood("biryani", serveFood);
+    prepareFood("biryani", serveFood);  
     console.log("make a order");
 */
     //promise
