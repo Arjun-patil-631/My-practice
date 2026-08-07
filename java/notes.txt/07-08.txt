@@ -1,0 +1,123 @@
+Elements of OO
+1.Abstraction        we hide unwanted or unnecessary data
+2.Encapsulation     
+3.Hireracy
+4.Modularity
+
+5.Typing
+6.congrency
+7.persistance
+
+//now lets see in more depth  
+
+=====clock.java==========
+----------------------------------------
+public class clock{
+    int hours;
+    int minutes;
+    int seconds;
+}
+-------------------------------------
+
+========DemoClock.java=============
+------------------------------------------
+public class DemoClock{
+    public static void main(String[] args){
+        clock c=new clock();
+        System.out.println(c.hours);
+        System.out.println(c.minutes);
+        System.out.println(c.seconds);
+    }
+}
+------------------------------------------
+output:
+0
+0
+0
+
+
+**Thus we can directly access the Abstraction of clock file
+we dont want that so we make our Abstraction private
+
+========clock.java==========
+----------------------------------
+public class clock{
+    private int hours;
+    private int minutes;
+    private int seconds;
+}
+--------------------------
+**But if we do this we also cant accessthe data(hours, minutes, seconds)
+so what we have to do is create an another public function
+ the public function can access  the private members and i can use that public function
+
+
+========clock.java==========
+-----------------------------------------------
+public class clock{
+    //data members
+    private int hours;
+    private int minutes;
+    private int seconds;
+
+    //member functions
+    public void showTime(){
+        System.out.println(hours+"hh "+minutes+"mm "+seconds+"ss ");
+    }
+}
+----------------------------------------------------
+
+
+========DemoClock.java=============
+--------------------------------------------------------
+public class DemoClock{
+    public static void main(String[] args){
+        clock c=new clock();
+        c.showTime();
+    }
+}
+--------------------------------------------------------
+output:
+0hh 0mm 0ss 
+
+
+//constructor function
+ in the above codes we have done 
+  clock c=new clock
+           ^     
+
+here the new is the operator which takes clock as input and gives memory for clock class
+here the name of the class file and the constructor name is given to be same so that it doesnt make other variable
+
+the work of constructor is to initialize the class to  0 
+instead of making the initialize function, our compiler automatically adds constructor to the program
+**constructor doesnt have a return type it is because of here new is operator and it takes clock() as operand
+and if constructor gives return type then the def of operator will be changed.
+
+
+class-> is a result of classifying objects
+//classes and objects
+
+class               |  object       |
+                    |               |  
+data members        | state         |
+member functions    | functionality |
+
+
+
+
+//solving a problem 
+if the problems complexity is low and small 
+then we can directly go for procedural(structural ) programming i,e; C langauge
+a problem in c is solved in the basis of data and functions
+
+now if the program is having like around 10k functions or even more than that we cant solve the problems in this procedure
+so the concept of  OOPS was introduced :
+    oops is nothing but grouping of similar functions with data in a particular class
+
+and if the complexity increases more again the same process is introduced
+:     all the similar objects are grouped to form an one big object i,e; *Aspect*
+and so on (the technolgy is not yet introduced)
+
+==in short:  
+function   ->->-> classes and objects ->->-> Aspects ->->-> nextTechnology
