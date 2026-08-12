@@ -93,7 +93,9 @@ the work of constructor is to initialize the class to  0
 instead of making the initialize function, our compiler automatically adds constructor to the program
 **constructor doesnt have a return type it is because of here new is operator and it takes clock() as operand
 and if constructor gives return type then the def of operator will be changed.
-
+**constructor can only called by JVM
+that only during object creattion
+if we dont give a constructor the compliler automatically adds a constructor
 
 class-> is a result of classifying objects
 //classes and objects
