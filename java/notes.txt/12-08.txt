@@ -1,0 +1,210 @@
+===========clock.java====================
+---------------------------------------------
+public class clock{
+    private int hours;
+    private int minutes;
+    private int seconds;
+
+    public clock(){
+        hours=10;
+        minutes=10;
+        seconds=35;
+    }
+    public void setTime(int h, int m, int s){
+        hours = h;
+        minutes = m;
+        seconds = s;
+    }
+    public void showTime(){
+        System.out.println(hours+"hh "+minutes+"mm "+seconds+"ss ");
+    }
+}
+----------------------------------------
+===========DemoClock.java================
+----------------------------------------
+public class DemoClock{
+    public static void main(String[] args){
+        clock c=new clock();
+        c.showTime();
+        System.out.println("changing the values to our choice")
+        c.setTime(12,12,12);
+        c.showTime();
+    }
+}
+----------------------------------------
+o/p:
+10hh 10mm 35ss
+changing the values to our choice
+12hh 12mm 12ss
+
+thus we can intialize the values we need this is known as constructor with no parametrs and no return type including void
+
+now here instead of initializing the values after every object is created :
+what we can do is :
+Pass the values while creation of an object: This is called parameterized constructor
+thus it makes the program convinient by passing the elemts of our choice while creation instead of writing seperate code for that and calling it everytime
+code for that:
+===============clock.java====================
+-------------------------------------------------
+public class clock{
+    private int hours;
+    private int minutes;
+    private int seconds;
+
+    public clock(){
+        hours=10;
+        minutes=10;
+        seconds=35;
+    }
+
+    //here is the new user defined constructor
+    public clock(int h, int m, int s){
+        hours=h;
+        minutes=m;
+        seconds=s;
+    }
+    public void setTime(int h, int m, int s){
+        hours = h;
+        minutes = m;
+        seconds = s;
+    }
+    public void showTime(){
+        System.out.println(hours+"hh "+minutes+"mm "+seconds+"ss ");
+    }
+}
+---------------------------------------------
+===========DemoClock.java===================
+---------------------------------------------
+public class DemoClock{
+    public static void main(String[] args){
+        clock c=new clock(12,12,12);
+        c.showTime();
+    }
+}
+----------------------------------------
+o/p:
+12hh 12mm 12ss
+
+here we are passing the values to the constructor so that it directly creates the objects with the values we want
+but using these h, m, s 
+*-*
+public clock(int h, int m, int s){
+                 ^      ^      ^
+        hours=h;
+              ^
+        minutes=m;
+                ^
+        seconds=s;
+                ^
+    }
+*-*
+this may create a lot of confusion to us and others who are trying to understand the code
+now here comes the role of "this" keeyword
+
+now we can write it as:
+*-*
+public clock(int hours, int minutes, int seconds){
+        this.hours=hours;
+        this.minutes=minutes;
+        this.seconds=seconds;
+    }
+*-*
+now there hours are local variables of the function and also :
+this -> this keyword is acting as a reference variable to the 'current object' 
+in our code this is calling accessing clock's members 
+
++moving futher for more refinement of our code:
+*-*
+public clock(){
+        hours=10;
+        minutes=10;
+        seconds=35;
+    }
+*-*     |    //we can change it to
+        \/
+*-----*
+public clock(){
+        this(10 , 10, 35);
+}
+//and also add below function
+public clock(int value){
+        this(value,value,value);
+}
+*-----*
+the second clock function takes one input and assign it to hours, minutes, seconds
+
+and futher enhacement of our code: 
+like taking only 23:59:59 as max Time
+and throwing error if exceeded;
+
+//final code:
+
+===============clock.java====================
+-------------------------------------------------
+public class clock{
+    private int hours;
+    private int minutes;
+    private int seconds;
+
+    public clock(){
+        this(10 , 10, 35);
+
+    }
+    public clock(int value){
+        this(value,value,value);
+    }
+    public clock(int hours, int minutes, int seconds){
+        if(hours>=0 && hours<=23 && minutes>=0 && minutes<=59 && seconds>=0 && seconds<=59){
+            this.hours = hours;
+            this.minutes = minutes;
+            this.seconds = seconds;
+        }
+        else{
+            throw new IllegalArgumentException("invalid values to time......");
+        }
+    }
+    public void setTime(int h, int m, int s){
+        hours = h;
+        minutes = m;
+        seconds = s;
+    }
+    public void showTime(){
+        System.out.println(hours+"hh "+minutes+"mm "+seconds+"ss ");
+    }
+}
+---------------------------------------------
+===========DemoClock.java===================
+---------------------------------------------
+public class DemoClock{
+    public static void main(String[] args){
+        System.out.println("checking the constructor");
+        clock c=new clock();
+        c.showTime();
+        System.out.println("\nchecking the  parametarized constructor");
+        clock d=new clock(12,12,13);
+        c.showTime();
+        System.out.println("\nchecking the single parameter constructor");
+        clock e =new clock(10);
+        c.showTime();
+        System.out.println("checking if the clock goes beyond 24 hrs");
+        clock f=new clock(25,32,21);
+        c.showTime();
+    }
+}
+----------------------------------------
+
+o/p:
+checking the constructor
+10hh 10mm 35ss
+
+checking the  parametarized constructor
+10hh 10mm 35ss
+
+checking the single parameter constructor
+10hh 10mm 35ss
+checking if the clock goes beyond 24 hrs
+Exception in thread "main" java.lang.IllegalArgumentException: invalid values to time......
+        at clock.<init>(clock.java:20)
+        at DemoClock.main(DemoClock.java:13)
+
+//perfect!
