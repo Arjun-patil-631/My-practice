@@ -22,7 +22,7 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 2 out
 =============
 our compiler takes it as correct 
 but went it comes to jvm it gets terminated 
-as the index is out of range od the array
+as the index is out of range of the array
 
 
 when we use --- default values

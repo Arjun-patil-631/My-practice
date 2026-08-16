@@ -14,6 +14,8 @@ Hello!!
 Hello!!
 Hello!! Srinivas
 
+
+/lets see what will happen if we use concat
 ------------------------------------
 public class StringDemo{
     public static void main(String args[]){
@@ -31,6 +33,7 @@ Hello!!
 Hello!! Srinivas
 
 noww
+lets learn about StringBuffer
 ----------------------------------------------
 public class StringDemo{
     public static void main(String args[]){
@@ -80,6 +83,6 @@ it has the same features like StringBuffer
 and StringBuilder is best suitable for single threaded applications
 
 **String is best used for mutlithreaded because string is immutable and it can be easily accessable by everyone
-without any internventions
+without any interventions
 
-//write a progrm to display a menu till the user wish and track all the navigation and print it beofre exiting the applicaton
+//write a program to display a menu till the user wish and track all the navigation and print it before exiting the applicaton

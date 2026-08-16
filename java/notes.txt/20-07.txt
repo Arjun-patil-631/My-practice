@@ -72,4 +72,4 @@ for(int input: arr){
     System.out.println(input);
 }
 
-**but only able to access not able to control the iteration
+**but only able to access elements & not able to control the iteration
