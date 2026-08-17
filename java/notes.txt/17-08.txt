@@ -1,0 +1,98 @@
+clock now we have requirement:
+like the onbject cannot be created more than once then:
+singleton
+
+Design pattern:
+a generic solution to a commonly occuring problem
+
+one of the pattern is singleton;
+in this what is done is
+===================singleton.java===============
+----------------------------------------------
+//this class is defined to allow instantiation exactly once-Singleton design patern
+public class singleton{
+
+    //static variable to tract the instance of this class
+    private static singleton s=null;
+    // to restrict the object creation
+    private singleton(){
+
+    }
+
+    //static method to restrict object creation exactly once
+    public static singleton createSingleton(){
+        if(s==null){
+            s=new singleton();
+        }
+        return s;
+    }
+}
+---------------------------------------------------
+
+=============singletonDemo.java===========
+------------------------------------------
+public class singletonDemo{
+    public static void main(String[] args) {
+        singleton s1=singleton.createSingleton();
+        System.out.println(s1);
+        singleton s2=singleton.createSingleton();
+        System.out.println(s2);
+    }
+}
+--------------------------------------------
+
+o/p:
+singleton@1dbd16a6
+singleton@1dbd16a6
+
+**
+thus we have restricted to single object creation 
+
+
+now lets move to learn more about 
+inheritance
+we know
+matter->living->humanbeing->male 
+so lets try to implement that:
+
+============matter.java=======
+--------------------------------
+abstract public class matter{
+    public matter(){
+        System.out.println("matter is created....");
+    }
+}
+-------------------------------
+
+===========living.java============
+---------------------------------
+abstract public class living extends matter{
+    public living(){
+        System.out.println("living is created....");
+    }
+}
+----------------------------------
+
+==========humanbeing.java=======
+---------------------------------
+abstract public class HumanBeing extends living{
+    public HumanBeing(){
+        System.out.println("Rational thinking added.....");
+    }
+}
+----------------------------------
+
+===========male.java=============
+----------------------------------
+public class male extends HumanBeing{
+    public male(){
+        System.out.println("A male is perfectly in place...");
+    }
+}
+-------------------------------------
+
+o/p:
+matter is created....
+living is created....
+Rational thinking added.....
+A male is perfectly in place...
