@@ -34,7 +34,7 @@ int main() {
     }
 
     start=0;
-    count = 0;
+    count = 1;
     dfs(start);
 
     printf("Total distinct friends reachable from friend %d: %d\n", start + 1, count);
