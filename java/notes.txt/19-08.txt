@@ -1,0 +1,70 @@
+============matter.java==========
+--------------------------------
+public abstract class matter{
+    public matter(int a){
+        System.out.println("matter is created....");
+    }
+}
+-------------------------------
+
+===========living.java============
+---------------------------------
+public abstract class living extends matter{
+    public living(){
+        super(10);
+        System.out.println("living is created....");
+    }
+}
+----------------------------------
+#
+suppose matter is not abstract:
+we can direcly create matter which is not legal
+
+*
+super: to route to the respective parent class if it has any argument
+by default the class will route to the parent without arguments
+but if there are arguments to the parent class then its the responsibility of the programmer to pass the arguments
+this is possibe through this super function
+
+
+now:
+============Myclass.java===============
+--------------------------------
+public class Myclass{
+    public void Mymethod();
+}
+--------------------------------------
+o/p:
+Myclass.java:2: error: method Mymethod() in Myclass is missing a method body, or should be declared abstract
+    public void Mymethod();
+                ^
+1 error
+
+now *-*
+lets try to make our method abstract
+what error we get is:
+
+Myclass.java:1: error: Myclass is not abstract and does not override abstract method Mymethod() in Myclass
+public class Myclass{                                                                                                                   }
+       ^
+1 error
+
+so now we try to make this as a subclass
+but still it will have the same error so anywhere in our program we need to implement the body of our method
+
+inheritance:
+extending the scope of accessibility by the keyword `extends`
+
+suppose there is a method called methodA in A.java
+hierarchery:
+A.java  ->  B.java  ->  C.java
+ ^             ^            ^
+ methodA    methodB      methodC
+
+ and we made an object 
+ C c= new c();
+ then we can use c.methodA
+ because of inheritance we can call the method in A class :'thus it increases the scope of accessibility
+
+ but if we make A c= new c();
+ this will make a reference to the A class and thus restrict us to search in the child classes
