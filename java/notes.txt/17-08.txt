@@ -57,7 +57,7 @@ so lets try to implement that:
 
 ============matter.java=======
 --------------------------------
-abstract public class matter{
+public abstract class matter{
     public matter(){
         System.out.println("matter is created....");
     }
@@ -66,7 +66,7 @@ abstract public class matter{
 
 ===========living.java============
 ---------------------------------
-abstract public class living extends matter{
+public abstract class living extends matter{
     public living(){
         System.out.println("living is created....");
     }
@@ -75,7 +75,7 @@ abstract public class living extends matter{
 
 ==========humanbeing.java=======
 ---------------------------------
-abstract public class HumanBeing extends living{
+public abstract class HumanBeing extends living{
     public HumanBeing(){
         System.out.println("Rational thinking added.....");
     }
