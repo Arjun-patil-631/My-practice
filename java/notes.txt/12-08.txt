@@ -208,3 +208,18 @@ Exception in thread "main" java.lang.IllegalArgumentException: invalid values to
         at DemoClock.main(DemoClock.java:13)
 
 //perfect!
+
+
+now lwts go beyond it : 14-08-2026
+method which changes the state of the object when called
+
+
+constructor can only be caled during object creation 
+
+#
+static method: a method which can be directy called byclass name 
+
+static variable gets the memory first and the static block is executed later 
+static function cannot called instance variable 
+but instance varibale can call static method
+:this is because s
