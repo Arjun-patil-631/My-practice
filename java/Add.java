@@ -1,7 +1,7 @@
 public class Add{
     public static void main(String[] args){
         int result=plus(10,20);
-        System.out.printlln(result);
+        System.out.println(result);
     }
     public static int plus(int a, int b){
         return a+b;
