@@ -1,0 +1,64 @@
+step 1 
+create project folder
+
+step 2
+open project folder using vs code
+
+step 3
+open terminal in vs code
+
+step 4
+>npm init -y
+
+step 5
+>npm i express
+
+step 6
+create app.js and write the following code:
+
+app.js:
+-----------------------------------------------------
+const express=require("express")
+const app=express()
+
+const port=5000
+app.listen(port, ()=>{
+    console.log("Server is running successfully")
+})
+------------------------------------------------------
+
+step 7
+configure the configure.json file
+
+package.json:
+-------------------------------------------------------
+"scripts":{
+    "test":"echo \"Error:no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+------------------------------------------------------
+
+step 8
+>npm start
+
+step 9
+>npm i nodemon
+
+      Q: wht is nodemon?
+     ans:Nodemon is a development tool for Node.js that automatically restarts the application 
+         whenever project files are modified, making development faster and more efficient
+     in own words: (use of nodemon: if we made any changes, we can directly execute it automatically-without interruption in the server)
+
+step 10
+configure package.json 
+
+package.json:
+-------------------------------------------------------
+"scripts":{
+    "test":"echo \"Error:no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+------------------------------------------------------
+
+step 11
+test with nodemon
