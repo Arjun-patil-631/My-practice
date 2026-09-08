@@ -5,13 +5,13 @@ public class DemoClock{
         c.showTime();
         System.out.println("\nchecking the  parametarized constructor");
         clock d=new clock(12,12,13);
-        c.showTime();
+        d.showTime();
         System.out.println("\nchecking the single parameter constructor");
         clock e =new clock(10);
-        c.showTime();
+        e.showTime();
         System.out.println("checking if the clock goes beyond 24 hrs");
         clock f=new clock(25,32,21);
-        c.showTime();
+        f.showTime();
     }
 }
 
