@@ -29,4 +29,8 @@ dist/
 .DS_Store
 Thumbs.db
 
+#node modules -express
+node_modules/
+**/node_modules/
+
 node js/node_modules/
