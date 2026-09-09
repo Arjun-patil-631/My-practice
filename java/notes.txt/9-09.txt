@@ -1,0 +1,138 @@
+-------------------------------------------------------------------------
+public class EDemo{
+    public static void main(String[] args) {
+        System.out.println("From the start of the main...");
+        int values[]={10,20,30,40,50};
+        for(int i=0; i<=5;i++){
+            System.out.println("value at "+i+" is "+values[i]);
+        }
+        System.out.println("From the end of the main...");
+    }
+}
+-------------------------------------------------------------------------
+o/p:
+
+From the start of the main...
+value at 0 is 10
+value at 1 is 20
+value at 2 is 30
+value at 3 is 40
+value at 4 is 50
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+        at EDemo.main(EDemo.java:6)
+
+
+-------------------------------------------------------------------------
+public class EDemo {
+
+    public static void main(String[] args) {
+        System.out.println("From the start of the main...");
+        try {
+            int values[] = {10, 20, 30, 40, 50};
+            for (int i = 0; i <= 5; i++) {
+                System.out.println("value at " + i + " is " + values[i]);
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("EXception handled...");
+        }
+        System.out.println("From the end of the main...");
+    }
+}
+-------------------------------------------------------------------------
+o/p:
+
+From the start of the main...
+value at 0 is 10
+value at 1 is 20
+value at 2 is 30
+value at 3 is 40
+value at 4 is 50
+EXception handled...
+From the end of the main...
+
+
+**
+as a java programmer our work is to identify the lines of code where we can get a error
+and out that code in try block
+
+
+-------------------------------------------------------------------------
+public class EDemo {
+
+    public static void main(String[] args) {
+        System.out.println("From the start of the main...");
+        try {
+            int values[] = {10, 20, 30, 40, 50};
+            for (int i = 0; i <5; i++) {
+                System.out.println("value at " + i + " is " + values[i]);
+            }
+            double numerator=10;
+            double denominator=0;
+            double result=numerator/denominator;
+            System.out.println("result: "+result);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array out of range...");
+        } catch (ArithmeticException ae){
+            System.out.println("It goes to infinity...");
+        }
+        System.out.println("From the end of the main...");
+    }
+}
+-------------------------------------------------------------------------
+
+o/p:
+From the start of the main...
+value at 0 is 10
+value at 1 is 20
+value at 2 is 30
+value at 3 is 40
+value at 4 is 50
+result: Infinity
+From the end of the main...
+
+
+POINTS TO REMEMBER:
+**
+*for a single try block there can be multiple catch blocks
+*if it exits the try block and goes to catch it doesnt go to try again
+** so what we do is add only related tasks in the try so that even if we gets out of the try function it doesnt effect other tasks in try block
+
+lets understand about finally block 
+finally{//lines of code}
+
+this block gets executed everytime, wether the try is good(executed completely) or bad(error)
+
+complete worflow::
+
+public class EDemo {
+
+    public static void main(String[] args) {
+
+        //our starting lines of code
+        System.out.println("From the start of the main...");
+        //lets add code in try block which can produce any error
+        try {
+            //all related tasks i.e; dependent tasks
+            //such that if terminated it doesnt affect our other tasks
+        }
+        //adding catch for the expected errors in try block
+        //lets assume we have array out of index error
+        catch (ArrayIndexOutOfBoundsException e) {
+            
+            //particular block of codes to counter the ArrayIndexOutOfBoundsException error or to show it
+        }
+        // adding other catch block
+        //lets assume the other error we could face is of ArithmeticException
+        catch (ArithmeticException ae){
+            
+            //particular block of codes to counter the ArithmeticException error or to show it
+        }
+        finally{
+            
+            //the block of codes which u want to execute always : not worried of the try function
+        }
+
+        //the end program
+        System.out.println("From the end of the main...");
+    }
+}
