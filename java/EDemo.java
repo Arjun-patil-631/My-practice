@@ -1,6 +1,5 @@
 
 public class EDemo {
-
     public static void main(String[] args) {
         System.out.println("From the start of the main...");
         try {
