@@ -1,0 +1,25 @@
+ The Vehicle & Fleet Management System
+•	Problem Statement: Design a base class Vehicle with attributes like make, model, and fuelEfficiency. Create two subclasses: Car (adds seatingCapacity) and Truck (adds cargoCapacity). Override a method calculateRange(double fuelCapacity) in both subclasses to compute the distance the vehicle can travel. The Truck class must reduce its range by 10% if it is fully loaded.
+
+
+The Smart Home Device Automation
+•	Problem Statement: Create two interfaces: Powerable (with methods turnOn() and turnOff()) and WiFiConnectable (with methods connectToNetwork(String ssid) and disconnect()). Design a class SmartCamera and another class SmartThermostat that implement both interfaces. Track and display the internal status of the device (e.g., trying to connect to Wi-Fi while the power is off should throw an error message).
+
+
+The Corporate Payroll Ecosystem
+•	Problem Statement: Design an abstract class Employee with abstract methods calculateMonthlySalary() and getEmployeeDetails(). Derive three concrete subclasses: FullTimeEmployee (fixed monthly salary + benefits), PartTimeEmployee (hourly rate × hours worked), and CommissionEmployee (base salary + percentage of sales volume). Write a main program that handles an array of Employee references to generate a unified payroll report.
+
+Online Marketplace Payment Gateway
+•	Problem Statement: Create a PaymentProcessor interface that defines a method processPayment(double amount). Add a default method printReceipt(double amount) and a static method validateCurrency(String currency). Implement this interface in two classes: CreditCardProcessor and CryptoProcessor. The crypto processor should add a flat network transaction fee to the total amount before processing.
+
+
+The E-Library Content Engine
+•	Problem Statement: Create a base class LibraryItem with protected attributes like title and id. Derive a subclass WrittenMedia (adds author and pageCount). Further derive a final class RareManuscript from WrittenMedia that adds specific conservation rules and overrides the checkout() method to always deny regular borrowing.
+
+
+Universal Booking & Reservation System
+•	Problem Statement: Define a Reservable interface with methods book(String date) and cancel(). Create two entirely distinct class hierarchies: HotelRoom (extends Accommodations) and FlightSeat (extends AirlineAsset). Both independent subclasses must implement the Reservable interface to manage dates and seat/room availability statuses.
+
+
+The Secure Banking Transaction Ledger
+•	Problem Statement: Create a base interface Transaction with a method execute(). Create a sub-interface SecureTransaction that extends Transaction and adds a method verifyDigitalSignature(String signature). Implement SecureTransaction in a class WireTransfer. If the signature verification fails, the execution of the transfer must be aborted.
