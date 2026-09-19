@@ -67,4 +67,6 @@ public class SmartCamera implements Powerable, WifiConnectable{
         System.out.println("Smart Camera Power: " + (isOn ? "ON" : "OFF"));
         System.out.println("Wi-Fi: " + (isConnected ? "Connected to " + network : "Disconnected"));
     }
+
+    
 }

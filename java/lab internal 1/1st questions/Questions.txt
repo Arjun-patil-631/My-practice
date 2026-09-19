@@ -1,0 +1,40 @@
+The Dynamic Bill Calculator
+•	Problem Statement: Write a program that takes a customer's electricity units consumed as input and calculates the total bill amount till the uses wish, based on the following tiered tariff rates:
+o	First 100 units: $1.20 per unit
+o	Next 200 units (101 to 300): $2.00 per unit
+o	Above 300 units: $3.00 per unit
+An additional surcharge of 5% is added to the total bill if the total amount exceeds $500.
+
+ The Smart Vending Machine
+•	Problem Statement: Design a text-based menu for a beverage vending machine. The user enters a character choice ('C' for Coffee, 'T' for Tea, 'J' for Juice, 'W' for Water), till the user wish.
+o	If Coffee or Tea is selected, prompt the user to press 1 for "With Sugar" or 2 for "Sugar-Free" using a nested condition.
+o	Print the final item description along with its cost (assign arbitrary prices).
+o	Handle invalid character inputs gracefully using a default case.
+
+The Number Classifier & Digit Analyzer
+•	Problem Statement: Prompt the user to enter a positive integer. Write a program to calculate and display till the user wish:
+1.	The sum of all its digits (e.g., input 254 outputs 11).
+2.	A count of how many digits were even and how many were odd.
+3.	Whether the overall sum is a prime number. 
+
+The Secure PIN Authentication Simulator
+•	Problem Statement: Write a program that simulates an ATM lock screen. Define a fixed 4-digit master PIN as a constant (e.g., 1234). The user is given a maximum of 3 attempts to enter the correct PIN.
+o	If the user enters the correct PIN, display "Access Granted" and immediately terminate the program.
+o	If the user enters an incorrect PIN, display "Incorrect PIN. Remaining attempts: X".
+o	If the user fails all 3 attempts, display "Account Locked due to too many failed attempts".
+
+Multi-Pattern Geometric Generator
+•	Problem Statement: Accept a positive integer N from the user representing the number of rows. Print the following two patterns side-by-side or sequentially based on N 
+(Example below is for N = 4):
+
+1st pattern:
+1
+12
+123
+1234
+
+2nd pattern:
+****
+***
+**
+*
