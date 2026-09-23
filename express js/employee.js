@@ -8,6 +8,12 @@ let employee = [];
 // Middleware to read form data
 app.use(express.urlencoded({ extended: true }));
 
+//connecting Database with MongoDB
+mongoose
+.connect("mongodb://127.0.1:27017/employeeDB")
+.then(()=>console.log("Connected to MongoDB successfully!"))
+.catch((err)=>console.error("Database connection error",err))
+
 // Home Page
 app.get("/", (req, res) => {
     res.send(`
