@@ -1,4 +1,4 @@
-public class clock{
+public class clock implements java.io.Serializable{
     private int hours;
     private int minutes;
     private int seconds;
