@@ -1,0 +1,18 @@
+TR
+
+
+                                ______________java.lang.throwable  (as in generic way)__________
+                                //                                                             \\
+                    java.lang.Error                                                             java.lang.Exception (as in a specific way)
+                    //         \\                                                                 \\
+InvalidPasswordException   InvalidUsernameException                                       java.lang.Runtime
+                                                                                        //               \\
+                                                                        ArithmeticException          IndexOutOfBoundsException
+                                                                                                             \\
+                                                                                                             ArrayIndexOutOfBoundsException
+
+Indside JVM everything exists in the foem of Objects
+Even Abnormal situations are also represented using java objects of type java.lang.throwable                             
+
+
+*

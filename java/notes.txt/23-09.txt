@@ -1,0 +1,12 @@
+
+
+
+------------
+instream
+--------
+
+a stream which carries continuous flow of instream
+
+
+instream                            
+source
