@@ -1,18 +1,34 @@
 const express = require("express");
-const { default: mongoose } = require("mongoose");
-
+const mongoose = require("mongoose");
 const app = express();
+const port = 5000;
 
-let employee = [];
-
-// Middleware to read form data
 app.use(express.urlencoded({ extended: true }));
 
-//connecting Database with MongoDB
+// Connect to MongoDB
 mongoose
-.connect("mongodb://127.0.1:27017/employeeDB")
-.then(()=>console.log("Connected to MongoDB successfully!"))
-.catch((err)=>console.error("Database connection error",err))
+  .connect("mongodb://127.0.0.1:27017/employeeDB")
+  .then(() => console.log("Connected to MongoDB successfully!"))
+  .catch((err) => console.error("Database connection error", err));
+
+// Schema & Model Definition
+const employeeSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    employeeNumber: {
+        type: Number,
+        required: true,
+        unique: true,
+    },
+    department: {
+        type: String,
+        required: true,
+    }
+});
+
+const Employee = mongoose.model("Employee", employeeSchema);
 
 // Home Page
 app.get("/", (req, res) => {
@@ -39,51 +55,82 @@ app.get("/", (req, res) => {
     `);
 });
 
-// Register New Employee
-app.post("/register", (req, res) => {
-    const newEmployee = {
-        id: employee.length + 1,
-        name: req.body.name,
-        employeeNumber: Number(req.body.employeeNumber),
-        department: req.body.department
-    };
-
-    employee.push(newEmployee);
-
-    res.redirect("/employees");
-});
-
 // Middleware for /employees
 app.use("/employees", (req, res, next) => {
     console.log("Employee list accessed");
     next();
 });
 
+// Fetch all employees from the database
+app.get("/employees", async (req, res) => {
+    try {
+        const employees = await Employee.find();
+        const employeeList = employees.length
+            ? employees
+                .map(
+                    (e, index) =>
+                        `<p>${index + 1}. <b>Name:</b> ${e.name} | <b>Employee Number:</b> ${e.employeeNumber} | <b>Department:</b> ${e.department}</p>`
+                )
+                .join("")
+            : "<p>No employees found.</p>";
 
-app.get("/employees", (req, res) => {
-    res.json(employee);
-});
-
-app.get("/employees/:id", (req, res) => {
-    const id = Number(req.params.id);
-
-    const emp = employee.find((e) => e.id === id);
-
-    if (!emp) {
-        return res.send("Employee not found");
+        res.send(`
+            <!DOCTYPE html>
+            <html>
+              <body>
+                <h2>Registered Employees</h2>
+                ${employeeList}
+                <br/>
+                <a href="/">Back to home</a>
+              </body>
+            </html>
+        `);
+    } catch (error) {
+        console.error("Error fetching employees:", error);
+        res.status(500).send("Error fetching employees");
     }
-
-    res.send(`
-        <h1>Employee Details</h1>
-        <p>Employee ID: ${emp.id}</p>
-        <p>Name: ${emp.name}</p>
-        <p>Employee Number: ${emp.employeeNumber}</p>
-        <p>Department: ${emp.department}</p>
-
-        <a href="/employees">Back to Employees</a>
-    `);
 });
 
-app.listen(3000, () => {
-    console.log("Employee Registration System running on http://localhost:3000");
+// Register New Employee
+app.post("/register", async (req, res) => {
+    try {
+        const newEmployee = new Employee({
+            name: req.body.name,
+            employeeNumber: Number(req.body.employeeNumber),
+            department: req.body.department
+        });
+
+        await newEmployee.save();
+        res.redirect("/employees");
+    } catch (error) {
+        console.error("Error registering employee:", error);
+        res.status(500).send("Error registering employee");
+    }
+});
+
+// Get employee by ID
+app.get("/employees/:id", async (req, res) => {
+    try {
+        const emp = await Employee.findById(req.params.id);
+        if (!emp) {
+            return res.status(404).send("Employee not found");
+        }
+
+        res.send(`
+            <h1>Employee Details</h1>
+            <p>Employee ID: ${emp.id}</p>
+            <p>Name: ${emp.name}</p>
+            <p>Employee Number: ${emp.employeeNumber}</p>
+            <p>Department: ${emp.department}</p>
+
+            <a href="/employees">Back to Employees</a>
+        `);
+    } catch (error) {
+        console.error("Error fetching employee:", error);
+        res.status(500).send("Error fetching employee");
+    }
+});
+
+app.listen(port, () => {
+    console.log(`Employee Registration System running on http://localhost:${port}`);
 });
