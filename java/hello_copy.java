@@ -10,7 +10,7 @@ if we keep the class name and file name different then it will give an error
 error: class demo is public, should be declared in a file named demo.java
 */
 
-public class Hello{
+public class New{
     public static void main(String[] args){
         System.out.println("Hello, world!!!");
     }
