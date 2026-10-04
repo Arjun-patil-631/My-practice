@@ -8,6 +8,11 @@ const PORT=process.env.PORT
 
 app.use(bodypraser.json())
 const employeeRoutes=require('./routes/employeeRoutes')
+const employee = require('./models/employee')
+
+app.get('/',(req,res)=>{
+    res.status(200).json(employee)
+})
 
 app.use('/employee',employeeRoutes)
 mongoose.connect(process.env.MONGO_URL)

@@ -1,4 +1,4 @@
-const Employee = require('..models/Employee');
+const Employee = require('../models/employee');
 
 const createEmployee = async (req, res) => {
     try {
@@ -17,4 +17,14 @@ const createEmployee = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
-module.exports = { createEmployee };
+
+const getEmployees=async(req, res)=>{
+    try{
+        const employees=await Employee.find()
+        res.status(200).json(employees)
+    }catch(error){
+        console.error("There is an error:", error);
+        res.status(500).json({ message: error.message });
+    }
+}
+module.exports = { createEmployee, getEmployees };
