@@ -27,4 +27,28 @@ const getEmployees=async(req, res)=>{
         res.status(500).json({ message: error.message });
     }
 }
-module.exports = { createEmployee, getEmployees };
+
+const updateEmployee=async(req,res)=>{
+    try{
+        const {employeeId, name, email, phone, city}=req.body
+        const myEmployee=await Employee.findByIdAndUpdate(req.params.id,{employeeId,name,email,phone,city})
+        if(!myEmployee){
+            return res.status(404).json({message: 'employee not found'})
+        }
+        res.status(202).json(myEmployee)
+    }catch(error){
+        console.error("There is an error", error);
+        res.status(500).json({message: "server error"});
+    }
+}
+
+const deleteEmployee=async(req,res)=>{
+    try{
+        const deleteEmployee= await Employee.findByIdAndDelete(req.params.id)
+        res.status(204).send()
+    }catch(error){
+        console.error("There is an error:", error);
+        res.status(500).json({message:"server error"});
+    }
+}
+module.exports = { createEmployee, getEmployees, updateEmployee, deleteEmployee };
