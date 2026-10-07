@@ -6,4 +6,5 @@ router.post('/add-emp',employeeContoller.createEmployee)
 router.get('/allemployees',employeeContoller.getEmployees)
 router.put('/update-emp/:id',employeeContoller.updateEmployee)
 router.delete('/delete-emp/:id',employeeContoller.deleteEmployee)
+router.get('/net-salary/:id',employeeContoller.calculateSalary)
 module.exports=router

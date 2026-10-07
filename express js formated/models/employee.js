@@ -22,6 +22,18 @@ const employeeSchema = new mongoose.Schema({
     city: {
         type: String,
         required: true
+    },
+    salary:{
+        type:Number,
+        required: true
+    },
+    bonus:{
+        type: Number,
+        required: true
+    },
+    deductions:{
+        type: Number,
+        required: true
     }
 });
 module.exports=mongoose.model('Employee',employeeSchema)

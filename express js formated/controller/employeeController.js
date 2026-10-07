@@ -2,13 +2,16 @@ const Employee = require('../models/employee');
 
 const createEmployee = async (req, res) => {
     try {
-        const { employeeId, name, email, phone, city } = req.body;
+        const { employeeId, name, email, phone, city, salary, bonus, deductions} = req.body;
         const employee = new Employee({ 
             employeeId, 
             name, 
             email, 
             phone, 
-            city 
+            city,
+            salary,
+            bonus,
+            deductions
         });
         await employee.save();
         res.status(201).json(employee);
@@ -30,8 +33,8 @@ const getEmployees=async(req, res)=>{
 
 const updateEmployee=async(req,res)=>{
     try{
-        const {employeeId, name, email, phone, city}=req.body
-        const myEmployee=await Employee.findByIdAndUpdate(req.params.id,{employeeId,name,email,phone,city})
+        const {employeeId, name, email, phone, city, salary, bonus, deductions}=req.body
+        const myEmployee=await Employee.findByIdAndUpdate(req.params.id,{employeeId, name, email, phone, city, salary, bonus, deductions})
         if(!myEmployee){
             return res.status(404).json({message: 'employee not found'})
         }
@@ -51,4 +54,25 @@ const deleteEmployee=async(req,res)=>{
         res.status(500).json({message:"server error"});
     }
 }
-module.exports = { createEmployee, getEmployees, updateEmployee, deleteEmployee };
+
+const calculateSalary=async(req,res)=>{
+    try {
+        const emp = await Employee.findById(req.params.id);
+        if (!emp) {
+            return res.status(404).json({ message: 'employee not found' });
+        }
+        const { salary = 0, bonus = 0, deductions = 0 } = emp;
+        const totalSalary = salary + bonus - deductions;
+
+        res.status(200).json({ 
+            employeeId: emp.employeeId,
+            name: emp.name,
+            netSalary: totalSalary 
+        });
+    } catch (error) {
+        console.error("There is an error:", error);
+        res.status(500).json({ message: "server error" });
+    }
+}
+
+module.exports = { createEmployee, getEmployees, updateEmployee, deleteEmployee, calculateSalary};
