@@ -1,0 +1,21 @@
+React.js
+library to develop the frontend web apps
+
+mostly we use single page application(spa): reduce the traffic and use less internet
+
+it has 3 elements:
+
+1.components : partition of ur webpage
+    of 2 types
+    i) class based ->classes ->states
+    ii) function based ->function-> hooks
+                                   /    \
+                            use state    use effect
+
+2.props: properties -data fromm outside to the application
+
+3.state: data from one component to other component inside the application
+
+
+first npm install cors
+npm create vite@latest 
