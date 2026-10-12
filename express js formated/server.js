@@ -5,6 +5,7 @@ const bodypraser=require('body-parser')
 const app=express()
 dotenv.config()
 const PORT=process.env.PORT
+const cors=require('cors')
 
 app.use(bodypraser.json())
 const employeeRoutes=require('./routes/employeeRoutes')
