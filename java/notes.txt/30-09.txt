@@ -1,0 +1,76 @@
+precreated objects(implicit objects)
+
+System.out->printStream ....ke  
+System.err->printStream
+System.in->InputStream
+
+
+-----------------------------------------------
+import java.io.PrintStream;
+public class hello_new {
+    public static void main(String[] args) {
+        PrintStream out = System.out;
+        out.println("Hello, World!");
+    }
+}
+---------------------------------------------
+op:
+Hello, World!
+
+
+KBRDemo.java   (to get the next line input)
+--------------------------------------------------------------
+import java.io.*;
+public class KBRDemo {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String input = reader.readLine();
+        System.out.println(input);
+    }
+}
+-----------------------------------------------------------------
+
+
+KBRDemo.java   (for converting the received data into int)
+---------------------------------------------------------------------------
+import java.io.*;
+public class KBRDemo {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int result=Integer.parseInt(reader.readLine())+Integer.parseInt(reader.readLine());
+        System.out.println("Result: "+result);
+    }
+}
+-----------------------------------------------------------------------
+op:
+10
+20
+Result: 30
+
+
+now u can take Float.parseFloat, Double.parseDouble, short.parseShort, 
+same with Byte, Boolean
+
+buffered is gonna be more efficient than Scanner
+
+wrapper classes: they wrap the premitive data types
+
+:
+LNRDemo.java (LineNumberReader)
+----------------------------------------------------
+import java.io.*;
+public class LNRDemo {
+    public static void main(String[] args) throws Exception {
+        LineNumberReader reader = new LineNumberReader(new FileReader("hello.java"));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            System.out.println(reader.getLineNumber() + ": " + line);
+        }
+        reader.close();
+    }
+}
+-----------------------------------------------------------
+
+collections: is a object which is group of similar objects
+the objects in the collections are called elements
+
