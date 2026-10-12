@@ -1,0 +1,9 @@
+list: it is a ordered collection
+
+linkedlist: background implementaiton is doubly linkedlist
+arraylist: background implementaiton is resizzable arraylist
+
+any collection can take other collection as argument in the constructor
+ex:
+make a linkedlist and then covert it into ArrayList
+

@@ -1,0 +1,19 @@
+
+packages:
+
+
+
+To compile and save in the classes folder
+D:\work\java\bankpr\src> javac -d ..\classes com\mybank\accounts\BankAccount.java
+
+to run
+D:\work\java\bankpr\src> java -classpath ..\classes com.mybank.main.BankApp
+
+///next
+Access Specifiers
+
+public: can accessible everywhere
+protected: can access under same package and also outide(only to subclasses)
+default: access only to the same package
+private: only inside same class
+
