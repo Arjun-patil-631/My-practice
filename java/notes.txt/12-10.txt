@@ -1,0 +1,18 @@
+Synchronized
+on method: only one thread is allowed to perfom the operation
+
+ex:
+public Synchronized void MyMethod(){
+    1-----
+    2-----
+}
+
+we can also use this:
+ public void MyMethod(){
+    Synchronized{
+
+    }
+ }
+
+depend upon our requirement we can make the method Synchronized, or object Synchronized or a block of code Synchronized
+
