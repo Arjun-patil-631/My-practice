@@ -1,0 +1,21 @@
+How two applications (java application) running on different machines can communicate (talk to each other)?
+
+when there are uniquely discovereable or identifiable.
+applications run inside the OS ans OS runs inside the machine.
+
+each machine connected in the network is uniquely identified with its number->IP address
+IP address s 4 byte unsigned value each byte seperate with a perio.
+ex: 172.168.1.0
+
+if we need tsest applications communicating with each other, then everytime we require two machines to test them.
+
+even our machines is given with a IP address even, when not connected the network.
+124.0.0.1 (localhost) loop back address
+
+every program running inside the machine is uniquely identified with its Port number
+where port number is unisgned 16 bit value.
+whose range is 0-65535
+
+IP address+ Port number ---> Socket, where socket is one end point of communication. 
+we require 2 end points to have communication
+though we require 2 end points to have communication but 1 end point should have more ability i.e, the connection should be accepted so as to establish the communication
