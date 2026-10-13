@@ -2,33 +2,27 @@
 import java.io.*;
 import java.net.*;
 
-public class ProcessThread extends Thread {
-
-    private final Socket socket;
-
-    public ProcessThread(Socket socket) {
-        super("ClientHandler-" + socket.getRemoteSocketAddress());
-        this.socket = socket;
+public class ProcessThread extends Thread{
+    private Socket socket;
+    public ProcessThread(Socket socket){
+        this.socket=socket;
     }
+    public void run(){
+        try {
+            InputStream is=socket.getInputStream();
+            DataInputStream dis=new DataInputStream(is);
+            int i=dis.readInt();
+            int j=dis.readInt();
+            int sum=i+j;
+            DataOutputStream dos=new DataOutputStream(socket.getOutputStream());
+            dos.writeInt(sum);
+            dos.close();
+            dis.close();
+            socket.close();
 
-    @Override
-    public void run() {
-        try (
-                Socket clientSocket = socket; BufferedReader in = new BufferedReader(
-                        new InputStreamReader(clientSocket.getInputStream())); 
-                PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true)
-            ){
-            System.out.println("Connected successfully." 
-                    + " handled by " + Thread.currentThread().getName());
-            String inputLine;
-            while ((inputLine = in.readLine()) != null) {
-                System.out.println("Received from " + clientSocket.getRemoteSocketAddress()
-                        + ": " + inputLine);
-                out.println("Echo: " + inputLine);
-            }
-        } catch (IOException e) {
-            System.err.println("Error handling client " + socket.getRemoteSocketAddress()
-                    + ": " + e.getMessage());
+        } catch (IOException ie) {
+            ie.printStackTrace();
         }
     }
+
 }

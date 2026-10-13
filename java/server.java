@@ -1,28 +1,28 @@
 import java.io.*;
 import java.net.*;
 
-public class server {
+public class Server {
 
     public static void main(String[] args) {
         ServerSocket serverSocket = null;
+        //byte buffer[]=new byte[1024];
         try {
             serverSocket = new ServerSocket(12345);
-            System.out.println("Server is listening on port 12345");
-            while (true) {
-                Socket clientSocket = serverSocket.accept();
-                ProcessThread clientThread = new ProcessThread(clientSocket);
-                clientThread.start();
+            System.out.println("INFO: Server started "+new java.util.Date());
+            while(true){
+            new ProcessThread1(serverSocket.accept()).start();
+
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
+        } catch (IOException ie) {
+            ie.printStackTrace();
+        }finally{
+            if(serverSocket!=null)
             try {
-                if (serverSocket != null) {
-                    serverSocket.close();
-                }
-            } catch (IOException e) {
+                serverSocket.close();
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+
     }
 }
