@@ -1,0 +1,131 @@
+.list-container {
+    width: 100%;
+}
+
+.list-title {
+    font-size: 18px;
+    color: #1e293b;
+    margin-bottom: 14px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+}
+
+.employee-table th {
+    background-color: #f8fafc;
+    color: #475569;
+    padding: 12px 14px;
+    border-bottom: 2px solid #e2e8f0;
+    font-weight: 600;
+}
+
+.employee-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.actions-cell {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.btn-salary {
+    padding: 5px 9px;
+    margin-right: 6px;
+    background-color: #10b981;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-edit {
+    padding: 5px 9px;
+    margin-right: 6px;
+    background-color: #f59e0b;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-delete {
+    padding: 5px 9px;
+    background-color: #ef4444;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Edit Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    width: 360px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 6px 8px;
+    margin-top: 3px;
+    box-sizing: border-box;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.btn-cancel {
+    padding: 6px 12px;
+    background-color: #94a3b8;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-save {
+    padding: 6px 12px;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
