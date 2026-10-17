@@ -10,7 +10,7 @@ public class Server {
             serverSocket = new ServerSocket(12345);
             System.out.println("INFO: Server started "+new java.util.Date());
             while(true){
-            new ProcessThread1(serverSocket.accept()).start();
+            new ProcessThread(serverSocket.accept()).start();
 
             }
         } catch (IOException ie) {
