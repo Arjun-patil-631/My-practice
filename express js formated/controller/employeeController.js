@@ -67,6 +67,9 @@ const calculateSalary=async(req,res)=>{
         res.status(200).json({ 
             employeeId: emp.employeeId,
             name: emp.name,
+            baseSalary: salary,
+            bonus,
+            deductions,
             netSalary: totalSalary 
         });
     } catch (error) {
