@@ -10,7 +10,9 @@ public class LDemo{
 
         Iterator<String> iterator =sortedNames.iterator();
         String name;
-        while(iterator)
-        System.out.println(iterator);
+        while(iterator.hasNext()){
+            name=iterator.next();
+            System.out.println(name);
+        }
     }
 }

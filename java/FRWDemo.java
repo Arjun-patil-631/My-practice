@@ -5,7 +5,7 @@ public class FRWDemo {
 
     public static void main(String[] args) {
         int data;
-        try (FileReader fr = new FileReader("hello.java"); 
+        try (FileReader fr = new FileReader("hello_new.java"); 
                 FileWriter fw = new FileWriter("hello_copy.java")) {
             while ((data = fr.read()) != -1) {
                 fw.write(data);
