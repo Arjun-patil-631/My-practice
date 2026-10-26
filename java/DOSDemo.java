@@ -1,6 +1,4 @@
-import java.io.DataOutput;
-import java.io.DataOutputStream;
-import java.io.FileOutputStream;
+import java.io.*;
 
 public class DOSDemo {
     public static void main(String args[]){
