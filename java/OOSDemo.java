@@ -8,7 +8,7 @@ public class OOSDemo {
         ObjectOutputStream os =null;
         int data;
         try {
-            Clock c= new Clock();
+            clock c= new clock();
             c.setTime(14,53,55);
             os=new ObjectOutputStream(new FileOutputStream("Javadata.dat"));
             os.writeObject(c);

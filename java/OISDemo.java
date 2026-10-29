@@ -1,15 +1,12 @@
-import java.io.FileNotFoundException;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.*;
 
 public class OISDemo {
     public static void main(String args[]){
         ObjectInputStream is =null;
         try {
-            Clock c= null;
+            clock c= null;
             is=new ObjectInputStream(new FileInputStream("Javadata.dat"));
-            c=(Clock) is.readObject();
+            c=(clock) is.readObject();
             c.showTime();
         }catch(FileNotFoundException fe){
             fe.printStackTrace();

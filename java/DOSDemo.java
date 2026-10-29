@@ -6,7 +6,7 @@ public class DOSDemo {
         int englishmarks=78;
         int mathmarks=98;
         int sciencemarks=89;
-        double percentage=(englishmarks*mathmarks*sciencemarks)/3;
+        double percentage=(englishmarks+mathmarks+sciencemarks)/3.0;
         try{
             dos=new DataOutputStream(new FileOutputStream("primdata.dat"));
             dos.writeInt(englishmarks);
