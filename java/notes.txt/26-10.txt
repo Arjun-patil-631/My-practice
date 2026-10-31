@@ -1,0 +1,18 @@
+we need to have the clear sketch of the aplication 
+      All UI components and thier actions to be actionPerformed
+
+The application is usually developed with the following standards
+1.extend your class form frame or jframe
+2.declare all the UI components at one place (class level)
+3.constructor should construct the application and make it accessible(visible)
+4. implement the appropiate listeners either with the class oe make them anonymous(based in your need)
+
+public class NotepadApp extends Frame implements ActionListener{
+
+}
+
+5.Register the listeners with the appropriate sources (so as to take the appropriate
+action when the user interacts with the components)
+eg: btnLogin.ActionListener(this);
+or
+btnLogin.ActionListener(new NotepadApp());
