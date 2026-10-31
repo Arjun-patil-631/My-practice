@@ -1,0 +1,21 @@
+public interface LayoutManager2 extends LayoutManager{}
+
+public class BorderLayout implements LayoutManager2{}
+
+BorderLayout is a LayoutManager why?
+see the above 2 lines, that gives the answer
+that is BorderLayout implements LayoutManager2 which extends LayoutManager
+thats y BorderLayout is a LayoutManager
+
+hirerarchy for frame, dialog
+java.lang.Object
+java.awt.Component
+java.awt.Container
+java.awt.Window
+    frame, dialog 
+
+window has minimize maximize close
+but not panel bcoz it is subclass of container not window 
+
+for the JComponent
+all the base class 
