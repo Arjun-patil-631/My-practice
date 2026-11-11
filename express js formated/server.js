@@ -19,8 +19,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 app.use('/employee',employeeRoutes)
-mongoose.connect(process.env.MONGO_URI
-        console.log("MongoDB Connected Successfully")
+
+mongoose.connect(process.env.MONGO_URI)
+    .then(()=>{
+        console.log("MongoDB connected successfully");
     })
     .catch((error)=>{
         console.log("ERROR:",error)
